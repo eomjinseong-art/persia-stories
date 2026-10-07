@@ -30,6 +30,11 @@ export const sisters = [
     label: "이집트이야기",
     en: "Egypt Stories",
   },
+  {
+    href: "https://nadoo-timeline.vercel.app",
+    label: "나두연표",
+    en: "Timeline",
+  },
 ] as const;
 
 export const nav = [
