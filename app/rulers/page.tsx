@@ -24,7 +24,10 @@ export default function RulersPage() {
       <p className="mt-4 text-sm leading-7 text-muted">
         아케메네스 왕만 세도 이백 년이 넘습니다. 파르티아와 사산까지 더하면 명단은 교과서가 됩니다. 여기서는
         제국이 생기고, 그리스와 부딪히고, 왕조가 바뀌는 자리에 서 있던 {rulers.length}명만 골랐습니다.
-        알렉산드로스는 페르시아 왕이 아니라서 전쟁 글에 있습니다.
+        알렉산드로스는 페르시아 왕이 아니라서 전쟁 글에 있습니다. 누가 누구의 자녀인지는{" "}
+        <Link href="/family-tree" className="text-laurel underline decoration-line underline-offset-4 hover:text-terra">
+          가족관계도
+        </Link>에 그렸습니다.
       </p>
       <div className="mt-10 space-y-12">
         {rulerGroups.map((group) => (
