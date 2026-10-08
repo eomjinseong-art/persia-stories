@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Crumb } from "@/components/ArticleBits";
+import { Crumb, Elsewhere, SisterRow } from "@/components/ArticleBits";
 import { JsonLd } from "@/components/JsonLd";
 import { movies } from "@/content/movies";
 import { articleLd, pageMeta } from "@/lib/seo";
+import { otherFilms } from "@/lib/site";
 
 const description =
   "300, 300: 제국의 부활, 알렉산더, 알렉산더 대왕. 한국어·영어 제목과 연도, 어디가 창작인지. 시청 링크는 없습니다.";
@@ -39,30 +40,24 @@ export default function MoviesPage() {
             <p className="mt-3 text-sm leading-7">{movie.blurb}</p>
             <p className="mt-2 text-sm leading-7 text-muted">{movie.caveat}</p>
             <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-sm">
-              {movie.related.map((link) => (
-                <li key={link.href}>
-                  {link.href.startsWith("http") ? (
-                    <a
-                      href={link.href}
-                      className="text-laurel underline decoration-line underline-offset-4 hover:text-terra"
-                      rel="noopener noreferrer"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
+              {movie.related
+                .filter((link) => !link.href.startsWith("http"))
+                .map((link) => (
+                  <li key={link.href}>
                     <Link
                       href={link.href}
                       className="text-laurel underline decoration-line underline-offset-4 hover:text-terra"
                     >
                       {link.label}
                     </Link>
-                  )}
-                </li>
-              ))}
+                  </li>
+                ))}
             </ul>
+            <Elsewhere links={movie.related.filter((link) => link.href.startsWith("http"))} />
           </article>
         ))}
       </div>
+      <SisterRow title="다른 사이트의 영화" titleEn="Films on sister sites" links={otherFilms} />
     </div>
   );
 }

@@ -29,6 +29,7 @@ export const movies: Movie[] = [
         href: "https://greece-stories.vercel.app/people/leonidas",
         label: "그리스이야기의 레오니다스",
       },
+      { href: "https://greece-stories.vercel.app/movies#300", label: "그리스이야기의 300" },
     ],
   },
   {
@@ -48,6 +49,7 @@ export const movies: Movie[] = [
         href: "https://greece-stories.vercel.app/people/themistocles",
         label: "그리스이야기의 테미스토클레스",
       },
+      { href: "https://greece-stories.vercel.app/movies#300-rise", label: "그리스이야기의 300: 제국의 부활" },
     ],
   },
   {
@@ -68,6 +70,8 @@ export const movies: Movie[] = [
         href: "https://greece-stories.vercel.app/people/alexander",
         label: "그리스이야기의 알렉산드로스",
       },
+      { href: "https://greece-stories.vercel.app/movies#alexander", label: "그리스이야기의 알렉산더" },
+      { href: "https://egypt-stories.vercel.app/movies#alexander-2004", label: "이집트이야기의 알렉산더" },
     ],
   },
   {

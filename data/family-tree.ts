@@ -342,7 +342,7 @@ const achaemenidSeeds: TreeSeed[] = [
     caption: "기원전 559–530",
     summary:
       "안샨의 왕에서 제국의 왕이 된 사람입니다. 한국어 성서의 고레스와 같은 왕입니다. 기원전 539년 바빌론에 들어갔고, 유다 사람들의 귀환은 에즈라가 따로 전합니다. 키루스 원통은 신전 회복을 적은 글이지 인권 선언이 아닙니다.",
-    also: [{ href: "https://nadoo-timeline.vercel.app", label: "나두연표의 키루스" }],
+    also: [{ href: "https://nadoo-timeline.vercel.app/events/cyrus-takes-babylon", label: "나두연표의 바빌론 입성" }],
     aliases: ["cyrus", "cyrus ii", "cyrus the great", "키루스", "키루스 2세", "고레스", "kourosh", "kurush"],
   },
   {
@@ -445,7 +445,10 @@ const achaemenidSeeds: TreeSeed[] = [
     summary:
       "다레이오스 1세의 아들입니다. 자신의 비문은 아버지를 다레이오스라고 적습니다. 어머니를 아토사로 적는 것은 헤로도토스입니다. 기원전 480년 그리스로 갔다가 살라미스에서 졌고, 제국은 그때 끝나지 않았습니다.",
     note: "히브리 성서의 아하수에로를 이 왕과 같게 보는 전통이 있습니다. 에스더는 그 궁정 이야기의 인물입니다. 페르세폴리스 문서가 확인한 왕비가 아니므로 배우자로 잇지 않았습니다.",
-    also: [{ href: "https://greece-stories.vercel.app/wars/persian-wars", label: "그리스이야기의 페르시아 전쟁" }],
+    also: [
+      { href: "https://greece-stories.vercel.app/wars/persian-wars", label: "그리스이야기의 페르시아 전쟁" },
+      { href: "https://the-chosen-korean.vercel.app/bible-books/esther", label: "더 초즌의 에스더" },
+    ],
     aliases: ["xerxes", "xerxes i", "크세르크세스", "크세르크세스 1세", "ahasuerus", "아하수에로", "esther", "에스더"],
   },
   {

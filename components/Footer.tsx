@@ -57,13 +57,15 @@ export function Footer() {
           </p>
           <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-2 text-xs">
             {sisters.map((sister) => (
-              <li key={sister.href}>
+              <li key={sister.href} className="max-w-full">
                 <a
                   href={sister.href}
-                  className="underline decoration-line underline-offset-4 hover:text-terra"
+                  target="_blank"
                   rel="noopener noreferrer"
+                  className="inline-flex max-w-full flex-wrap items-baseline gap-x-1 hover:text-terra"
                 >
-                  {sister.label}
+                  <span className="underline decoration-line underline-offset-4">{sister.label}</span>
+                  <span className="text-[10px] tracking-[0.12em] text-terra">{sister.en}</span>
                 </a>
               </li>
             ))}

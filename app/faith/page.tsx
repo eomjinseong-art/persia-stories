@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Crumb, Sources } from "@/components/ArticleBits";
+import { Crumb, Elsewhere, Sources } from "@/components/ArticleBits";
 import { JsonLd } from "@/components/JsonLd";
 import { articleLd, pageMeta } from "@/lib/seo";
+import { outboundProps, type LinkRef } from "@/lib/site";
 
 const description =
   "아케메네스 비문의 아후라 마즈다와 사산 시대의 조로아스터교를 짧게, 깎지 않고 구분합니다. 예배 안내가 아닙니다.";
@@ -12,7 +13,7 @@ export const metadata: Metadata = pageMeta({
   path: "/faith",
 });
 
-const sections = [
+const sections: { title: string; body: string[]; elsewhere?: LinkRef[] }[] = [
   {
     title: "이 글은 예배 안내가 아닙니다",
     body: [
@@ -40,6 +41,7 @@ const sections = [
       "후대의 조로아스터교에서 불은 신 그 자체가 아니라, 깨끗함과 의식이 머무는 요소로 설명됩니다. ‘불을 섬기는 민족’이라는 옛 별명은 바깥에서 붙인 짧은 말이고, 당사자의 신학을 대신하지 못합니다.",
       "헤로도토스가 말하는 마고스(마기)는 제사와 점을 맡은 무리입니다. 베히스툰 비문의 가우마타도 마고스로 적힙니다. 같은 단어가 사제 집단과, 왕의 정적 이야기에 같이 쓰입니다. 하나를 다른 하나의 증거로 바로 넘기기는 어렵습니다.",
     ],
+    elsewhere: [{ href: "https://the-chosen-korean.vercel.app/bible-books/matthew", label: "더 초즌의 마태복음" }],
   },
   {
     title: "사산 시대에는 제도가 더 분명해집니다",
@@ -71,6 +73,7 @@ export default function FaithPage() {
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
+            {section.elsewhere ? <Elsewhere links={section.elsewhere} /> : null}
           </section>
         ))}
       </div>
@@ -78,7 +81,7 @@ export default function FaithPage() {
         <a
           href="https://nadoo-myth.vercel.app"
           className="text-laurel underline decoration-line underline-offset-4 hover:text-terra"
-          rel="noopener noreferrer"
+          {...outboundProps("https://nadoo-myth.vercel.app")}
         >
           나두신화에서 그리스 신 이야기 읽기 →
         </a>

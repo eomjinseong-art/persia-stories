@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { nav, sisters, site } from "@/lib/site";
+import { linkCheckAllow404, nav, sisters, site } from "@/lib/site";
+
+const allowMissing = new Set<string>(linkCheckAllow404);
 
 export function Header() {
   const path = usePathname();
@@ -27,7 +29,7 @@ export function Header() {
           </span>
         </Link>
       </div>
-      <nav aria-label="주요 메뉴" className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-3 pb-2">
+      <nav aria-label="주요 메뉴" className="mx-auto flex w-full min-w-0 max-w-6xl gap-1 overflow-x-auto px-3 pb-2">
         {nav.map((item) => {
           const active = path === item.href || path.startsWith(`${item.href}/`);
           return (
@@ -46,23 +48,26 @@ export function Header() {
       </nav>
       <nav
         aria-label="나두 역사·신화"
-        className="mx-auto flex max-w-6xl items-center gap-x-3 overflow-x-auto px-4 pb-2.5 text-xs"
+        className="mx-auto flex w-full min-w-0 max-w-6xl items-center gap-x-3 overflow-x-auto overscroll-x-contain px-4 pb-2.5 text-xs lg:items-start lg:overflow-visible"
       >
         <span
           aria-hidden="true"
-          className="sticky left-0 z-10 flex shrink-0 items-center self-stretch bg-bg pr-2 text-[10px] tracking-[0.16em] text-terra"
+          className="sticky left-0 z-10 flex shrink-0 items-center self-stretch bg-bg pr-2 text-[10px] tracking-[0.16em] text-terra lg:static"
         >
           나두 역사·신화
         </span>
-        <ul className="flex shrink-0 items-center gap-x-3">
+        <ul className="flex w-max shrink-0 items-center gap-x-3 lg:w-auto lg:min-w-0 lg:flex-1 lg:flex-wrap lg:gap-y-1.5">
           {sisters.map((sister) => (
             <li key={sister.href} className="shrink-0">
               <a
                 href={sister.href}
-                className="text-muted underline decoration-line underline-offset-4 hover:text-terra"
+                target="_blank"
                 rel="noopener noreferrer"
+                data-link-check={allowMissing.has(sister.href) ? "allow-404" : undefined}
+                className="inline-flex items-baseline gap-1 whitespace-nowrap text-muted hover:text-terra"
               >
-                {sister.label}
+                <span className="underline decoration-line underline-offset-4">{sister.label}</span>
+                <span className="text-[10px] tracking-[0.08em] text-terra">{sister.en}</span>
               </a>
             </li>
           ))}
