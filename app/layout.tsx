@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     "페르세폴리스",
     "파르티아",
     "사산 왕조",
+    "가족관계도",
     "페르시아이야기",
     "Persia Stories",
     "persia-stories",

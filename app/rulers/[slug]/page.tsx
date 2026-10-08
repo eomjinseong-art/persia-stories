@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Crumb, More, MovieList, Neighbors, RelatedLinks, Sources } from "@/components/ArticleBits";
 import { JsonLd } from "@/components/JsonLd";
 import { getRuler, rulerNeighbors, rulers } from "@/content/rulers";
+import { familyTreeHref } from "@/data/family-tree";
 import { articleLd, pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -28,6 +30,7 @@ export default async function RulerPage({ params }: { params: Promise<{ slug: st
   const ruler = getRuler(slug);
   if (!ruler) notFound();
   const neighbors = rulerNeighbors(slug);
+  const treeHref = familyTreeHref(ruler.slug);
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-10">
@@ -46,6 +49,13 @@ export default async function RulerPage({ params }: { params: Promise<{ slug: st
         {ruler.formal} · {ruler.role} · {ruler.years}
       </p>
       <p className="mt-4 text-sm leading-7 text-ink">{ruler.summary}</p>
+      {treeHref ? (
+        <p className="mt-3 text-sm">
+          <Link href={treeHref} className="text-laurel underline decoration-line underline-offset-4 hover:text-terra">
+            가족관계도에서 보기 →
+          </Link>
+        </p>
+      ) : null}
       <ol className="mt-6 space-y-3 text-sm leading-7">
         {ruler.points.map((point, index) => (
           <li key={point} className="flex gap-3">

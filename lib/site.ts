@@ -41,6 +41,7 @@ export const nav = [
   { href: "/eras", label: "시대" },
   { href: "/places", label: "장소" },
   { href: "/rulers", label: "왕" },
+  { href: "/family-tree", label: "가족관계도" },
   { href: "/wars", label: "전쟁" },
   { href: "/daily", label: "일상" },
   { href: "/army", label: "군대" },
