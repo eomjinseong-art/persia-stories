@@ -1,6 +1,6 @@
 import Link from "next/link";
-import type { LinkRef, SourceRef } from "@/lib/site";
 import { moviesBySlug } from "@/content/movies";
+import { outboundProps, type LinkRef, type SourceRef } from "@/lib/site";
 
 export function Crumb({ items }: { items: { href?: string; label: string }[] }) {
   return (
@@ -45,30 +45,97 @@ export function More({ paragraphs }: { paragraphs: string[] }) {
   );
 }
 
-export function RelatedLinks({ links }: { links: LinkRef[] }) {
+export function Elsewhere({ links }: { links: readonly LinkRef[] }) {
   if (links.length === 0) return null;
   return (
-    <nav aria-label="이어서 보기" className="mt-8">
-      <h2 className="font-serif text-xl text-ink">이어서 보기</h2>
-      <ul className="mt-3 flex flex-wrap gap-2">
-        {links.map((link) => {
-          const className =
-            "rounded-full border border-line bg-card px-3 py-1.5 text-sm text-laurel hover:border-terra hover:text-terra";
-          return (
-            <li key={link.href}>
-              {link.href.startsWith("http") ? (
-                <a href={link.href} className={className} rel="noopener noreferrer">
-                  {link.label}
-                </a>
-              ) : (
-                <Link href={link.href} className={className}>
-                  {link.label}
-                </Link>
-              )}
-            </li>
-          );
-        })}
+    <aside aria-label="다른 사이트에서 더 보기" className="mt-4 rounded-md border border-line bg-card px-3 py-2.5">
+      <p className="text-[11px] tracking-[0.14em] text-terra">다른 사이트에서 더 보기</p>
+      <ul className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-sm">
+        {links.map((link) => (
+          <li key={link.href} className="max-w-full">
+            <a
+              href={link.href}
+              {...outboundProps(link.href)}
+              className="text-laurel underline decoration-line underline-offset-4 hover:text-terra"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
       </ul>
+    </aside>
+  );
+}
+
+export function SisterRow({
+  title,
+  titleEn,
+  links,
+}: {
+  title: string;
+  titleEn: string;
+  links: readonly { href: string; label: string; en: string }[];
+}) {
+  return (
+    <section aria-label={title} className="mt-10 rounded-lg border border-line bg-card p-5">
+      <h2 className="font-serif text-xl text-ink">
+        {title}
+        <span className="ml-2 align-middle font-sans text-[11px] tracking-[0.12em] text-terra">{titleEn}</span>
+      </h2>
+      <ul className="mt-3 flex flex-wrap gap-2 text-sm">
+        {links.map((link) => (
+          <li key={link.href} className="max-w-full">
+            <a
+              href={link.href}
+              {...outboundProps(link.href)}
+              className="inline-flex max-w-full flex-wrap items-baseline gap-x-1.5 rounded-full border border-line bg-bg px-3 py-1.5 text-laurel hover:border-terra hover:text-terra"
+            >
+              <span>{link.label}</span>
+              <span className="text-[10px] tracking-[0.12em] text-terra">{link.en}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function RelatedSplit({ links, pills = false }: { links: readonly LinkRef[]; pills?: boolean }) {
+  const internal = links.filter((link) => !link.href.startsWith("http"));
+  const external = links.filter((link) => link.href.startsWith("http"));
+  if (internal.length === 0 && external.length === 0) return null;
+  return (
+    <>
+      {internal.length > 0 ? (
+        <ul className={pills ? "mt-3 flex flex-wrap gap-2" : "mt-3 flex flex-wrap gap-x-3 gap-y-1 text-sm"}>
+          {internal.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={
+                  pills
+                    ? "rounded-full border border-line bg-card px-3 py-1.5 text-sm text-laurel hover:border-terra hover:text-terra"
+                    : "text-laurel underline decoration-line underline-offset-4 hover:text-terra"
+                }
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+      <Elsewhere links={external} />
+    </>
+  );
+}
+
+export function RelatedLinks({ links }: { links: LinkRef[] }) {
+  if (links.length === 0) return null;
+  const internal = links.some((link) => !link.href.startsWith("http"));
+  return (
+    <nav aria-label={internal ? "이어서 보기" : "다른 사이트에서 더 보기"} className="mt-8">
+      {internal ? <h2 className="font-serif text-xl text-ink">이어서 보기</h2> : null}
+      <RelatedSplit links={links} pills />
     </nav>
   );
 }
@@ -117,28 +184,7 @@ export function MovieList({ slugs, heading = "관련 영화" }: { slugs: string[
             </p>
             <p className="mt-3 text-sm leading-7 text-ink">{movie.blurb}</p>
             <p className="mt-2 text-sm leading-7 text-muted">{movie.caveat}</p>
-            <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-sm">
-              {movie.related.map((link) => (
-                <li key={link.href}>
-                  {link.href.startsWith("http") ? (
-                    <a
-                      href={link.href}
-                      className="text-laurel underline decoration-line underline-offset-4 hover:text-terra"
-                      rel="noopener noreferrer"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className="text-laurel underline decoration-line underline-offset-4 hover:text-terra"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
+            <RelatedSplit links={movie.related} />
           </article>
         ))}
       </div>

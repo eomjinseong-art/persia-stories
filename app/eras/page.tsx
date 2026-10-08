@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Crumb } from "@/components/ArticleBits";
+import { Crumb, Elsewhere } from "@/components/ArticleBits";
 import { JsonLd } from "@/components/JsonLd";
 import { articleLd, pageMeta } from "@/lib/seo";
 
@@ -106,27 +106,20 @@ export default function ErasPage() {
               ))}
             </div>
             <ul className="mt-4 flex flex-wrap gap-2">
-              {section.links.map((link) => (
-                <li key={link.href}>
-                  {link.href.startsWith("http") ? (
-                    <a
-                      href={link.href}
-                      className="rounded-full border border-line bg-card px-3 py-1.5 text-sm text-laurel hover:border-terra"
-                      rel="noopener noreferrer"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
+              {section.links
+                .filter((link) => !link.href.startsWith("http"))
+                .map((link) => (
+                  <li key={link.href}>
                     <Link
                       href={link.href}
                       className="rounded-full border border-line bg-card px-3 py-1.5 text-sm text-laurel hover:border-terra"
                     >
                       {link.label}
                     </Link>
-                  )}
-                </li>
-              ))}
+                  </li>
+                ))}
             </ul>
+            <Elsewhere links={section.links.filter((link) => link.href.startsWith("http"))} />
           </section>
         ))}
       </div>

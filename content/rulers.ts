@@ -63,6 +63,9 @@ export const rulers: Ruler[] = [
       { href: "/places/pasargadae", label: "파사르가다에" },
       { href: "/wars/babylon", label: "바빌론 입성" },
       { href: "/rulers/cambyses-ii", label: "다음 왕 캄비세스 2세" },
+      { href: "https://the-chosen-korean.vercel.app/bible-books/ezra", label: "더 초즌의 에즈라" },
+      { href: "https://the-chosen-korean.vercel.app/bible-books/isaiah", label: "더 초즌의 이사야" },
+      { href: "https://nadoo-timeline.vercel.app/events/cyrus-decree", label: "나두연표의 키루스 칙령" },
     ],
     movies: [],
     sources: [
@@ -133,6 +136,8 @@ export const rulers: Ruler[] = [
       { href: "/places/persepolis", label: "페르세폴리스" },
       { href: "/wars/marathon", label: "마라톤" },
       { href: "/rulers/xerxes-i", label: "다음 왕 크세르크세스 1세" },
+      { href: "https://the-chosen-korean.vercel.app/bible-books/haggai", label: "더 초즌의 학개" },
+      { href: "https://nadoo-timeline.vercel.app/events/second-temple-completed", label: "나두연표의 제2성전" },
     ],
     movies: [],
     sources: [
@@ -171,6 +176,7 @@ export const rulers: Ruler[] = [
         href: "https://greece-stories.vercel.app/wars/persian-wars",
         label: "그리스이야기의 페르시아 전쟁",
       },
+      { href: "https://the-chosen-korean.vercel.app/bible-books/esther", label: "더 초즌의 에스더" },
     ],
     movies: ["300", "300-rise"],
     sources: [
@@ -202,6 +208,8 @@ export const rulers: Ruler[] = [
       { href: "/rulers/xerxes-i", label: "크세르크세스 1세" },
       { href: "/wars/xerxes-invasion", label: "그 전의 그리스 원정" },
       { href: "/rulers/darius-iii", label: "마지막 아케메네스 왕 다레이오스 3세" },
+      { href: "https://the-chosen-korean.vercel.app/bible-books/nehemiah", label: "더 초즌의 느헤미야" },
+      { href: "https://greece-stories.vercel.app/people/themistocles", label: "그리스이야기의 테미스토클레스" },
     ],
     movies: [],
     sources: [
@@ -330,7 +338,7 @@ export const rulers: Ruler[] = [
       { href: "/wars/edessa", label: "에데사와 발레리아누스" },
       { href: "/places/naqsh-e-rostam", label: "나크시 루스탐" },
       { href: "/wars/carrhae", label: "그 전의 카르헤" },
-      { href: "https://rome-stories.vercel.app/wars", label: "로마이야기의 전쟁" },
+      { href: "https://rome-stories.vercel.app/origins#empire", label: "로마이야기의 제정" },
     ],
     movies: [],
     sources: [

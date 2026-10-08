@@ -90,6 +90,7 @@ export const places: Place[] = [
       { href: "/places/royal-road", label: "왕의 길" },
       { href: "/rulers/darius-i", label: "다레이오스 1세" },
       { href: "/wars/alexander", label: "수사의 혼인" },
+      { href: "https://the-chosen-korean.vercel.app/bible-books/esther", label: "더 초즌의 에스더" },
     ],
     movies: ["alexander-2004", "alexander-1956"],
     sources: [
@@ -201,6 +202,7 @@ export const places: Place[] = [
       { href: "/rulers/mithridates-i", label: "미트라다테스 1세" },
       { href: "/rulers/khosrow-i", label: "호스로 1세" },
       { href: "/wars/fall-of-sasanians", label: "사산의 끝" },
+      { href: "https://rome-stories.vercel.app/rulers/trajan", label: "로마이야기의 트라야누스" },
     ],
     movies: [],
     sources: [

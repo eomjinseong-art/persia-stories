@@ -15,26 +15,37 @@ export const site = {
 
 export const sisters = [
   { href: "https://nadoo-myth.vercel.app", label: "나두신화", en: "Myth" },
-  {
-    href: "https://greece-stories.vercel.app",
-    label: "그리스이야기",
-    en: "Greece Stories",
-  },
-  {
-    href: "https://rome-stories.vercel.app",
-    label: "로마이야기",
-    en: "Rome Stories",
-  },
-  {
-    href: "https://egypt-stories.vercel.app",
-    label: "이집트이야기",
-    en: "Egypt Stories",
-  },
-  {
-    href: "https://nadoo-timeline.vercel.app",
-    label: "나두연표",
-    en: "Timeline",
-  },
+  { href: "https://iliad-stories.vercel.app", label: "일리아스이야기", en: "Iliad" },
+  { href: "https://greece-stories.vercel.app", label: "그리스이야기", en: "Greece" },
+  { href: "https://rome-stories.vercel.app", label: "로마이야기", en: "Rome" },
+  { href: "https://egypt-stories.vercel.app", label: "이집트이야기", en: "Egypt" },
+  { href: "https://the-chosen-korean.vercel.app", label: "더 초즌 · 성경", en: "The Chosen · Bible" },
+  { href: "https://philosophy-stories.vercel.app", label: "철학이야기", en: "Philosophy" },
+  { href: "https://korea-stories.vercel.app", label: "대한민국이야기", en: "Korea" },
+  { href: "https://nadoo-timeline.vercel.app", label: "나두연표", en: "Timeline" },
+  { href: "https://tinalinkeom.vercel.app", label: "나두 허브", en: "Nadoo Hub" },
+] as const;
+
+/** Iliad is deploying in parallel and may 404 until that site is live. */
+export const linkCheckAllow404 = ["https://iliad-stories.vercel.app"] as const;
+
+export const otherFamilyTrees = [
+  { href: "https://rome-stories.vercel.app/family-tree", label: "로마이야기", en: "Rome" },
+  { href: "https://greece-stories.vercel.app/family-tree", label: "그리스이야기", en: "Greece" },
+  { href: "https://egypt-stories.vercel.app/family-tree", label: "이집트이야기", en: "Egypt" },
+  { href: "https://korea-stories.vercel.app/family-tree", label: "대한민국이야기", en: "Korea" },
+  { href: "https://nadoo-myth.vercel.app/family-tree", label: "나두신화", en: "Myth" },
+  { href: "https://the-chosen-korean.vercel.app/family-tree", label: "더 초즌 · 성경", en: "The Chosen · Bible" },
+] as const;
+
+export const otherFilms = [
+  { href: "https://rome-stories.vercel.app/movies", label: "로마이야기", en: "Rome" },
+  { href: "https://greece-stories.vercel.app/movies", label: "그리스이야기", en: "Greece" },
+  { href: "https://egypt-stories.vercel.app/movies", label: "이집트이야기", en: "Egypt" },
+  { href: "https://korea-stories.vercel.app/films", label: "대한민국이야기", en: "Korea" },
+  { href: "https://philosophy-stories.vercel.app/films", label: "철학이야기", en: "Philosophy" },
+  { href: "https://nadoo-myth.vercel.app/in-media", label: "나두신화", en: "Myth" },
+  { href: "https://the-chosen-korean.vercel.app/together", label: "더 초즌 · 성경", en: "The Chosen · Bible" },
 ] as const;
 
 export const nav = [
@@ -54,6 +65,11 @@ export type LinkRef = {
   href: string;
   label: string;
 };
+
+export function outboundProps(href: string): { target?: "_blank"; rel?: "noopener noreferrer" } {
+  if (!href.startsWith("http")) return {};
+  return { target: "_blank", rel: "noopener noreferrer" };
+}
 
 export type SourceRef = {
   title: string;

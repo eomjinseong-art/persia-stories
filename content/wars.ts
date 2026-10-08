@@ -41,6 +41,8 @@ export const wars: War[] = [
       { href: "/rulers/cyrus", label: "키루스 2세" },
       { href: "/places/susa", label: "수사" },
       { href: "/faith", label: "신앙" },
+      { href: "https://the-chosen-korean.vercel.app/bible-books/daniel", label: "더 초즌의 다니엘" },
+      { href: "https://nadoo-timeline.vercel.app/events/babylonian-exile", label: "나두연표의 바빌론 유배" },
     ],
     movies: [],
     sources: [
@@ -155,6 +157,10 @@ export const wars: War[] = [
         href: "https://egypt-stories.vercel.app/wars/alexander",
         label: "이집트이야기의 알렉산드로스",
       },
+      {
+        href: "https://greece-stories.vercel.app/family-tree?tree=macedon&focus=alexander",
+        label: "그리스이야기의 알렉산드로스 가계",
+      },
     ],
     movies: ["alexander-2004", "alexander-1956"],
     sources: [
@@ -187,7 +193,7 @@ export const wars: War[] = [
       { href: "/rulers/mithridates-i", label: "미트라다테스 1세" },
       { href: "/army", label: "군대" },
       { href: "/wars/edessa", label: "에데사, 로마와의 다음 전쟁" },
-      { href: "https://rome-stories.vercel.app/wars", label: "로마이야기의 전쟁" },
+      { href: "https://rome-stories.vercel.app/wars/caesar-civil-war", label: "로마이야기의 카이사르 내전" },
     ],
     movies: [],
     sources: [
@@ -219,7 +225,7 @@ export const wars: War[] = [
       { href: "/rulers/shapur-i", label: "샤푸르 1세" },
       { href: "/places/naqsh-e-rostam", label: "나크시 루스탐" },
       { href: "/wars/carrhae", label: "카르헤" },
-      { href: "https://rome-stories.vercel.app", label: "로마이야기" },
+      { href: "https://rome-stories.vercel.app/origins#empire", label: "로마이야기의 제정" },
     ],
     movies: [],
     sources: [

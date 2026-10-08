@@ -3,7 +3,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { places } from "@/content/places";
 import { rulers } from "@/content/rulers";
 import { wars } from "@/content/wars";
-import { sisters, site } from "@/lib/site";
+import { outboundProps, sisters, site } from "@/lib/site";
 
 const eras = [
   {
@@ -160,7 +160,7 @@ export default function HomePage() {
           <a
             href="https://greece-stories.vercel.app/wars/persian-wars"
             className="rounded-full border border-line bg-card px-4 py-2 hover:border-terra"
-            rel="noopener noreferrer"
+            {...outboundProps("https://greece-stories.vercel.app/wars/persian-wars")}
           >
             그리스 쪽에서 같은 전쟁 읽기
           </a>
@@ -235,7 +235,7 @@ export default function HomePage() {
                 <a
                   href={sister.href}
                   className="text-laurel underline decoration-line underline-offset-4 hover:text-terra"
-                  rel="noopener noreferrer"
+                  {...outboundProps(sister.href)}
                 >
                   {sister.label}
                 </a>
@@ -246,7 +246,7 @@ export default function HomePage() {
           <a
             href="https://greece-stories.vercel.app/wars/persian-wars"
             className="mt-4 inline-block text-sm text-terra"
-            rel="noopener noreferrer"
+            {...outboundProps("https://greece-stories.vercel.app/wars/persian-wars")}
           >
             그리스가 본 페르시아 전쟁 →
           </a>

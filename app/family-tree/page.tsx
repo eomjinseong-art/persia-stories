@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Crumb, Sources } from "@/components/ArticleBits";
+import { Crumb, SisterRow, Sources } from "@/components/ArticleBits";
 import { FamilyTreeView } from "@/components/FamilyTreeView";
 import { JsonLd } from "@/components/JsonLd";
 import { getRuler } from "@/content/rulers";
@@ -14,7 +14,7 @@ import {
   type TreeId,
 } from "@/data/family-tree";
 import { articleLd, pageMeta } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { otherFamilyTrees, outboundProps, site } from "@/lib/site";
 
 const description =
   "아케메네스 왕조의 가계도. 키루스 가문과 다레이오스의 다른 갈래, 바르디야와 가우마타의 논쟁, 파르티아와 사산의 짧은 왕위. 재위 해를 적고, 불확실한 관계는 점선으로 구분합니다.";
@@ -121,7 +121,7 @@ export default function FamilyTreePage() {
                               key={link.href}
                               href={link.href}
                               className="ml-2 text-laurel underline decoration-line underline-offset-4 hover:text-terra"
-                              rel="noopener noreferrer"
+                              {...outboundProps(link.href)}
                             >
                               {link.label}
                             </a>
@@ -181,6 +181,7 @@ export default function FamilyTreePage() {
         </ul>
       </section>
 
+      <SisterRow title="다른 가족관계도" titleEn="Other family trees" links={otherFamilyTrees} />
       <Sources items={[...FAMILY_SOURCES]} />
     </div>
   );
