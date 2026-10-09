@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { VisitorCounter } from "@/components/VisitorCounter";
 import { linkCheckAllow404, nav, sisters, site } from "@/lib/site";
 
 const allowMissing = new Set<string>(linkCheckAllow404);
@@ -28,6 +29,9 @@ export function Header() {
             </span>
           </span>
         </Link>
+        <div className="ml-auto flex items-center gap-3">
+          <VisitorCounter />
+        </div>
       </div>
       <nav aria-label="주요 메뉴" className="mx-auto flex w-full min-w-0 max-w-6xl gap-1 overflow-x-auto px-3 pb-2">
         {nav.map((item) => {
