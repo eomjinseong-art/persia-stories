@@ -35,6 +35,7 @@ export const places: Place[] = [
       { href: "/rulers/darius-i", label: "다레이오스 1세" },
       { href: "/rulers/xerxes-i", label: "크세르크세스 1세" },
       { href: "/wars/alexander", label: "알렉산드로스의 원정" },
+      { href: "https://nadoo-world.vercel.app/countries/ir", label: "나두세계에서 오늘의 이란 보기" },
       { href: "/places/pasargadae", label: "파사르가다에" },
     ],
     movies: ["alexander-2004"],
