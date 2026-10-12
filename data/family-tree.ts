@@ -89,10 +89,25 @@ export type FamilyTreeLayout = {
   byId: Map<string, LayoutNode>;
 };
 
-export const TREE_TABS: { id: TreeId; ko: string; en: string }[] = [
-  { id: "achaemenid", ko: "아케메네스 왕조", en: "Achaemenid" },
-  { id: "parthian", ko: "파르티아", en: "Arsacid" },
-  { id: "sasanian", ko: "사산 왕조", en: "Sasanian" },
+export const TREE_TABS: { id: TreeId; ko: string; en: string; lead: string }[] = [
+  {
+    id: "achaemenid",
+    ko: "아케메네스 왕조",
+    en: "Achaemenid",
+    lead: "기원전 550년 무렵 키루스 2세가 세운 첫 페르시아 제국입니다. 다리우스 1세는 키루스의 아들이 아니라 같은 가문의 다른 가지에서 왕이 됐습니다. 크세르크세스 1세로 이어지고, 기원전 330년 알렉산드로스에게 진 다리우스 3세에서 끝납니다.",
+  },
+  {
+    id: "parthian",
+    ko: "파르티아",
+    en: "Arsacid",
+    lead: "기원전 247년 무렵 아르사케스 1세가 세운 아르사케스 왕조입니다. 미트리다테스 1세 때 이란 고원과 메소포타미아까지 넓어졌고, 약 470년 동안 로마와 맞섰습니다. 서기 224년 무렵 아르다시르 1세에게 무너졌습니다.",
+  },
+  {
+    id: "sasanian",
+    ko: "사산 왕조",
+    en: "Sasanian",
+    lead: "서기 224년 무렵 아르다시르 1세가 파르티아를 무너뜨리고 세운 왕조입니다. 샤푸르 1세는 로마 황제 발레리아누스를 사로잡았고, 호스로 1세 때 크게 번성했습니다. 651년 마지막 왕 야즈데게르드 3세가 죽으며 끝났습니다.",
+  },
 ];
 
 const COL = 162;
