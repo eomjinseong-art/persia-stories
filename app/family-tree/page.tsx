@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Crumb, SisterRow, Sources } from "@/components/ArticleBits";
 import { FamilyTreeView } from "@/components/FamilyTreeView";
+import { TreePanel } from "@/components/TreePanel";
 import { JsonLd } from "@/components/JsonLd";
 import { getRuler } from "@/content/rulers";
 import {
@@ -90,10 +91,12 @@ export default function FamilyTreePage() {
         {TREE_TABS.map((tab) => {
           const tree = TREE_LIST.find((item) => item.id === tab.id)!;
           return (
-            <section key={tab.id} className="mt-8" aria-labelledby={`prose-${tab.id}`}>
+            <TreePanel key={tab.id} id={tab.id} defaultId="achaemenid">
+            <section className="mt-8" aria-labelledby={`prose-${tab.id}`}>
               <h3 id={`prose-${tab.id}`} className="font-serif text-xl text-ink">
                 {tab.ko} <span className="text-sm font-sans tracking-wide text-terra">{tab.en}</span>
               </h3>
+              <p className="mt-1 max-w-3xl text-sm leading-7 text-muted">{tab.lead}</p>
               {tree.bands.map((band) => (
                 <div key={band.id} className="mt-6">
                   <h4 className="font-serif text-lg" style={{ color: band.color }}>
@@ -145,6 +148,7 @@ export default function FamilyTreePage() {
                 </div>
               ))}
             </section>
+            </TreePanel>
           );
         })}
       </section>
