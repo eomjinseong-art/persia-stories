@@ -4,6 +4,7 @@ import { Crumb, More, MovieList, Neighbors, RelatedLinks, Sources } from "@/comp
 import { JsonLd } from "@/components/JsonLd";
 import { getPlace, placeNeighbors, places } from "@/content/places";
 import { articleLd, pageMeta } from "@/lib/seo";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export function generateStaticParams() {
   return places.map((place) => ({ slug: place.slug }));
@@ -59,6 +60,7 @@ export default async function PlacePage({ params }: { params: Promise<{ slug: st
         prev={neighbors.prev ? { href: `/places/${neighbors.prev.slug}`, label: neighbors.prev.nameKo } : undefined}
         next={neighbors.next ? { href: `/places/${neighbors.next.slug}`, label: neighbors.next.nameKo } : undefined}
       />
+      <CoupangCard />
     </article>
   );
 }

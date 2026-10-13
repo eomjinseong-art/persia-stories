@@ -4,6 +4,7 @@ import { places } from "@/content/places";
 import { rulers } from "@/content/rulers";
 import { wars } from "@/content/wars";
 import { outboundProps, sisters, site } from "@/lib/site";
+import { CoupangCard } from "@/components/CoupangCard";
 
 const eras = [
   {
@@ -166,6 +167,7 @@ export default function HomePage() {
           </a>
         </div>
       </section>
+      <CoupangCard />
       <div className="dentil opacity-50" aria-hidden="true" />
       <section className="mt-10" aria-labelledby="era-heading">
         <h2 id="era-heading" className="font-serif text-2xl text-ink">

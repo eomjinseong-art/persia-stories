@@ -4,6 +4,7 @@ import { Crumb, More, MovieList, Neighbors, RelatedLinks, Sources } from "@/comp
 import { JsonLd } from "@/components/JsonLd";
 import { getWar, warNeighbors, wars } from "@/content/wars";
 import { articleLd, pageMeta } from "@/lib/seo";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export function generateStaticParams() {
   return wars.map((war) => ({ slug: war.slug }));
@@ -80,6 +81,7 @@ export default async function WarPage({ params }: { params: Promise<{ slug: stri
         prev={neighbors.prev ? { href: `/wars/${neighbors.prev.slug}`, label: neighbors.prev.nameKo } : undefined}
         next={neighbors.next ? { href: `/wars/${neighbors.next.slug}`, label: neighbors.next.nameKo } : undefined}
       />
+      <CoupangCard />
     </article>
   );
 }
