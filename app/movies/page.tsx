@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { movies } from "@/content/movies";
 import { articleLd, pageMeta } from "@/lib/seo";
 import { otherFilms } from "@/lib/site";
+import { NadooHubFilmsLink } from "@/components/NadooHubLink";
 
 const description =
   "300, 300: 제국의 부활, 알렉산더, 알렉산더 대왕. 한국어·영어 제목과 연도, 어디가 창작인지. 시청 링크는 없습니다.";
@@ -58,6 +59,7 @@ export default function MoviesPage() {
         ))}
       </div>
       <SisterRow title="다른 사이트의 영화" titleEn="Films on sister sites" links={otherFilms} />
+      <NadooHubFilmsLink />
     </div>
   );
 }

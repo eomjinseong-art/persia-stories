@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { getRuler, rulerNeighbors, rulers } from "@/content/rulers";
 import { familyTreeHref } from "@/data/family-tree";
 import { articleLd, pageMeta } from "@/lib/seo";
+import { NadooHubPersonLink } from "@/components/NadooHubLink";
 
 export function generateStaticParams() {
   return rulers.map((ruler) => ({ slug: ruler.slug }));
@@ -72,6 +73,7 @@ export default async function RulerPage({ params }: { params: Promise<{ slug: st
         prev={neighbors.prev ? { href: `/rulers/${neighbors.prev.slug}`, label: neighbors.prev.nameKo } : undefined}
         next={neighbors.next ? { href: `/rulers/${neighbors.next.slug}`, label: neighbors.next.nameKo } : undefined}
       />
+      <NadooHubPersonLink base="https://persia-stories.vercel.app/rulers/" slug={ruler.slug!} />
     </article>
   );
 }
