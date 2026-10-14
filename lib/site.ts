@@ -61,6 +61,7 @@ export const nav = [
   { href: "/rulers", label: "왕" },
   { href: "/family-tree", label: "가족관계도" },
   { href: "/wars", label: "전쟁" },
+  { href: "/generals", label: "장군" },
   { href: "/daily", label: "일상" },
   { href: "/army", label: "군대" },
   { href: "/faith", label: "신앙" },

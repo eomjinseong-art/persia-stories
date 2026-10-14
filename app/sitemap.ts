@@ -1,3 +1,4 @@
+import { generals } from "@/data/generals";
 import type { MetadataRoute } from "next";
 import { places } from "@/content/places";
 import { rulers } from "@/content/rulers";
@@ -5,7 +6,7 @@ import { wars } from "@/content/wars";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = ["", "/eras", "/places", "/rulers", "/family-tree", "/wars", "/daily", "/army", "/faith", "/movies", "/sources"];
+  const staticPaths = ["", "/eras", "/places", "/rulers", "/family-tree", "/wars", "/generals", "/generals/quiz", ...generals.map((g) => `/generals/${g.slug}`), "/daily", "/army", "/faith", "/movies", "/sources"];
   const dynamicPaths = [
     ...rulers.map((item) => `/rulers/${item.slug}`),
     ...wars.map((item) => `/wars/${item.slug}`),
