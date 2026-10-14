@@ -234,6 +234,37 @@ export const wars: War[] = [
     ],
   },
   {
+    slug: "khosrow-justinian",
+    nameKo: "호스로 1세와 유스티니아누스의 전쟁",
+    nameEn: "Sasanian–Byzantine Wars of the 6th Century",
+    years: "서기 527–562년",
+    summary:
+      "사산의 카바드 1세와 아들 호스로 1세가 동로마의 유스티니아누스와 메소포타미아·아르메니아·캅카스에서 맞붙은 전쟁입니다. 동로마 쪽 장군은 벨리사리우스였습니다.",
+    why: "국경 요새(다라)와 캅카스의 라지카, 그리고 평화의 대가로 오가는 금을 두고 두 제국이 계속 부딪혔습니다.",
+    who: "카바드 1세·호스로 1세의 사산 군 대 유스티니아누스의 동로마 군(벨리사리우스 등).",
+    result:
+      "532년 ‘영원한 평화’, 540년 호스로의 안티오키아 약탈, 562년 50년 평화 조약으로 이어집니다. 어느 쪽도 상대를 무너뜨리지 못했습니다.",
+    points: [
+      "530년 다라 전투에서 벨리사리우스가 사산 군을 막았습니다.",
+      "531년 칼리니쿰에서는 사산 군이 벨리사리우스를 이겼습니다.",
+      "540년 호스로 1세는 시리아의 큰 도시 안티오키아를 함락하고 주민을 크테시폰 근처로 옮겼다고 프로코피오스가 적습니다.",
+    ],
+    more: [
+      "자세한 기록은 대부분 동로마 쪽 프로코피오스의 『전쟁사』입니다. 사산 쪽 시선은 후대 아랍·페르시아 역사서로 보충합니다.",
+    ],
+    related: [
+      { href: "/rulers/khosrow-i", label: "호스로 1세" },
+      { href: "/places/ctesiphon", label: "크테시폰" },
+      { href: "https://rome-stories.vercel.app/generals/belisarius", label: "로마이야기 · 벨리사리우스" },
+      { href: "https://nadoo-timeline.vercel.app/events/khosrow-i", label: "나두연표 · 호스로 1세" },
+    ],
+    movies: [],
+    sources: [
+      { title: "프로코피오스 『전쟁사』", note: "페르시아 전쟁 1–2권" },
+      { title: "타바리 『예언자와 왕들의 역사』", note: "사산 왕들의 후대 아랍어 기록" },
+    ],
+  },
+  {
     slug: "fall-of-sasanians",
     nameKo: "사산 왕조의 끝",
     nameEn: "Fall of the Sasanian Empire",

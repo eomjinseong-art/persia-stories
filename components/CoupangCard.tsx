@@ -1,6 +1,6 @@
 const COUPANG_CARD_URL = "https://link.coupang.com/a/hsdzLh1vB6";
 
-const COPY = {
+const DEFAULT_COPY = {
   icon: "🐫",
   ko: "왕의 길보다 빠른 길, 로켓배송",
   en: "Faster than the Royal Road.",
@@ -20,7 +20,14 @@ const CSS = `
  * 본문 중간용 쿠팡 파트너스 카드 (광고). 카드 전체가 하나의 링크입니다.
  * 팝업·고정 오버레이 없이 본문 흐름 안에만 놓습니다. 한 페이지에 1~2개까지만 사용하세요.
  */
-export function CoupangCard({ className = "" }: { className?: string }) {
+export function CoupangCard({
+  className = "",
+  copy,
+}: {
+  className?: string;
+  copy?: { icon: string; ko: string; en: string };
+}) {
+  const COPY = copy ?? DEFAULT_COPY;
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
