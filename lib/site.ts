@@ -24,6 +24,7 @@ export const sisters = [
   { href: "https://the-chosen-korean.vercel.app", label: "더 초즌 · 성경", en: "The Chosen · Bible" },
   { href: "https://philosophy-stories.vercel.app", label: "철학이야기", en: "Philosophy" },
   { href: "https://korea-stories.vercel.app", label: "대한민국이야기", en: "Korea" },
+  { href: "https://nadoo-worldwars.vercel.app", label: "세계대전이야기", en: "World Wars" },
   { href: "https://nadoo-world.vercel.app", label: "나두세계", en: "World" },
   { href: "https://nadoo-timeline.vercel.app", label: "나두연표", en: "Timeline" },
   { href: "https://tinalinkeom.vercel.app", label: "나두 허브", en: "Nadoo Hub" },
