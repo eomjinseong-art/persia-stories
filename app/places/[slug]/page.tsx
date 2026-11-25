@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Crumb, More, MovieList, Neighbors, RelatedLinks, Sources } from "@/components/ArticleBits";
@@ -52,6 +53,7 @@ export default async function PlacePage({ params }: { params: Promise<{ slug: st
           </li>
         ))}
       </ol>
+      <NadooAd inline />
       <More paragraphs={place.more} />
       <RelatedLinks links={place.related} />
       <MovieList slugs={place.movies} />

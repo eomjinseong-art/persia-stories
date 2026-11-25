@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Crumb } from "@/components/ArticleBits";
@@ -20,6 +21,7 @@ export default function PlacesPage() {
       <JsonLd data={articleLd({ title: "장소", description, path: "/places" })} />
       <Crumb items={[{ label: "장소" }]} />
       <p className="mt-6 text-xs tracking-[0.2em] text-terra">PLACES</p>
+      <NadooAd inline />
       <h1 className="mt-2 font-serif text-4xl text-ink">장소</h1>
       <p className="mt-4 text-sm leading-7 text-muted">
         페르세폴리스만 보면 제국이 궁전 하나로 줄어듭니다. 행정은 수사, 첫 왕은 파사르가다에, 왕의 목소리는

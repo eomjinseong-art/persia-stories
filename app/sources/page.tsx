@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import { Crumb } from "@/components/ArticleBits";
 import { JsonLd } from "@/components/JsonLd";
@@ -103,6 +104,7 @@ export default function SourcesPage() {
           ))}
         </ul>
       </section>
+      <NadooAd inline />
       <section className="mt-10">
         <h2 className="font-serif text-2xl text-ink">현대 개설</h2>
         <p className="mt-2 text-sm leading-7 text-muted">

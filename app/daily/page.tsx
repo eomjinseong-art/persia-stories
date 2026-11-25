@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Crumb, MovieList, Sources } from "@/components/ArticleBits";
@@ -62,6 +63,7 @@ export default function DailyPage() {
         영화의 연회는 왕과 측근의 며칠입니다. 아래는 아케메네스 시대를 중심으로, 기록에 남는 살림만
         골랐습니다. 파르티아와 사산의 마을까지 같은 하루였다고 쓰지 않습니다. 시대가 다르면 밥상도 다릅니다.
       </p>
+      <NadooAd inline />
       <div className="mt-8 space-y-8">
         {sections.map((section) => (
           <section key={section.title}>

@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Crumb } from "@/components/ArticleBits";
@@ -20,6 +21,7 @@ export default function RulersPage() {
       <JsonLd data={articleLd({ title: "왕", description, path: "/rulers" })} />
       <Crumb items={[{ label: "왕" }]} />
       <p className="mt-6 text-xs tracking-[0.2em] text-terra">RULERS</p>
+      <NadooAd inline />
       <h1 className="mt-2 font-serif text-4xl text-ink">왕</h1>
       <p className="mt-4 text-sm leading-7 text-muted">
         아케메네스 왕만 세도 이백 년이 넘습니다. 파르티아와 사산까지 더하면 명단은 교과서가 됩니다. 여기서는

@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import { Crumb, Elsewhere, Sources } from "@/components/ArticleBits";
 import { JsonLd } from "@/components/JsonLd";
@@ -64,6 +65,7 @@ export default function FaithPage() {
         어려운 신학 용어는 줄였습니다. 없는 교리를 지어 넣지 않았고, 연대가 갈리는 곳은 갈린다고
         적었습니다.
       </p>
+      <NadooAd inline />
       <div className="mt-8 space-y-8">
         {sections.map((section) => (
           <section key={section.title}>

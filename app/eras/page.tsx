@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Crumb, Elsewhere } from "@/components/ArticleBits";
@@ -89,6 +90,7 @@ export default function ErasPage() {
       <JsonLd data={articleLd({ title: "시대", description, path: "/eras" })} />
       <Crumb items={[{ label: "시대" }]} />
       <p className="mt-6 text-xs tracking-[0.2em] text-terra">ERAS</p>
+      <NadooAd inline />
       <h1 className="mt-2 font-serif text-4xl text-ink">시대</h1>
       <p className="mt-4 text-sm leading-7 text-muted">
         연대는 교과서와 개설서에서 널리 쓰는 눈금입니다. 왕 한 사람의 즉위 해가 기록마다 한두 해 다를 때는
