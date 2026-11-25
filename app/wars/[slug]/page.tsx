@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Crumb, More, MovieList, Neighbors, RelatedLinks, Sources } from "@/components/ArticleBits";
@@ -56,6 +57,7 @@ export default async function WarPage({ params }: { params: Promise<{ slug: stri
           </div>
         ))}
       </dl>
+      <NadooAd inline />
       <ol className="mt-6 space-y-3 text-sm leading-7">
         {war.points.map((point, index) => (
           <li key={point} className="flex gap-3">

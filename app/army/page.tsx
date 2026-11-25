@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Crumb, MovieList, Sources } from "@/components/ArticleBits";
@@ -55,6 +56,7 @@ export default function ArmyPage() {
         훈련 교범은 남아 있지 않습니다. 왕실 부조, 헤로도토스, 로마 쪽 패전 기록이 서로 다른 세기를 말해
         줍니다. 아케메네스와 사산을 한 군대처럼 적지 않습니다.
       </p>
+      <NadooAd inline />
       <div className="mt-8 space-y-8">
         {sections.map((section) => (
           <section key={section.title}>

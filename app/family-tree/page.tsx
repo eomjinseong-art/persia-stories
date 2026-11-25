@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Crumb, SisterRow, Sources } from "@/components/ArticleBits";
@@ -153,6 +154,7 @@ export default function FamilyTreePage() {
         })}
       </section>
 
+      <NadooAd inline />
       <section className="mt-12">
         <h2 className="font-serif text-2xl text-ink">점선으로 둔 것</h2>
         <p className="mt-2 max-w-3xl text-sm leading-7 text-muted">

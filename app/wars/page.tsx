@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Crumb } from "@/components/ArticleBits";
@@ -20,6 +21,7 @@ export default function WarsPage() {
       <JsonLd data={articleLd({ title: "전쟁", description, path: "/wars" })} />
       <Crumb items={[{ label: "전쟁" }]} />
       <p className="mt-6 text-xs tracking-[0.2em] text-terra">WARS</p>
+      <NadooAd inline />
       <h1 className="mt-2 font-serif text-4xl text-ink">전쟁</h1>
       <p className="mt-4 text-sm leading-7 text-muted">
         페르시아의 영토는 연설보다 전쟁에서 늘고 줄었습니다. 각 카드는 왜 싸웠는지, 누구와 싸웠는지, 끝나서

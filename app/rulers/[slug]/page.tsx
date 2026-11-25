@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -66,6 +67,7 @@ export default async function RulerPage({ params }: { params: Promise<{ slug: st
           </li>
         ))}
       </ol>
+      <NadooAd inline />
       <More paragraphs={ruler.more} />
       <RelatedLinks links={ruler.related} />
       <MovieList slugs={ruler.movies} />

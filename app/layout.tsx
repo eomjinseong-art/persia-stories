@@ -1,3 +1,5 @@
+import Script from "next/script";
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import { Noto_Sans_KR, Noto_Serif_KR } from "next/font/google";
 import { Footer } from "@/components/Footer";
@@ -75,9 +77,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           본문으로
         </a>
         <Header />
-        <main id="content">{children}</main>
+        <main id="content">{children}<NadooAd /></main>
         <Footer />
         <Analytics />
+        <Script src="https://nadoo-ads.vercel.app/ads.js" strategy="afterInteractive" />
       </body>
     </html>
   );

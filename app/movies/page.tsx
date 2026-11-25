@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Crumb, Elsewhere, SisterRow } from "@/components/ArticleBits";
@@ -28,6 +29,7 @@ export default function MoviesPage() {
         각 카드는 왜 보면 좋은지, 어디가 창작인지 두 단락으로 나눕니다. 스트리밍 링크는 없습니다. 불법
         사이트도 안내하지 않습니다.
       </p>
+      <NadooAd inline />
       <div className="mt-8 space-y-4">
         {movies.map((movie) => (
           <article key={movie.slug} id={movie.slug} className="rounded-lg border border-line bg-card p-5">
