@@ -23,6 +23,7 @@ const serif = Noto_Serif_KR({
 });
 
 export const metadata: Metadata = {
+  verification: { google: "LglMaYLzS6dacAPQ5ZgZdPgzdtfLbp_1Rk5vh3WNPlM" },
   metadataBase: new URL(site.url),
   title: {
     default: `${site.name} · 쉬운 페르시아 역사`,
